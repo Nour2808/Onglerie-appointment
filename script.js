@@ -268,7 +268,7 @@ class AppointmentBooking {
         document.getElementById('summaryDate').textContent = this.selectedDate || '-';
         document.getElementById('summaryService').textContent = this.selectedService || '-';
         document.getElementById('summaryTime').textContent = this.selectedTime || '-';
-        document.getElementById('summaryPrice').textContent = this.selectedServicePrice ? `${this.selectedServicePrice}€` : '-';
+        document.getElementById('summaryPrice').textContent = this.selectedServicePrice ? `${this.selectedServicePrice} DT` : '-';
     }
 
     submitBooking() {
@@ -310,7 +310,7 @@ class AppointmentBooking {
         document.getElementById('confirmDate').textContent = appointment.date;
         document.getElementById('confirmTime').textContent = appointment.time;
         document.getElementById('confirmService').textContent = appointment.service;
-        document.getElementById('confirmPrice').textContent = `${appointment.price}€`;
+        document.getElementById('confirmPrice').textContent = `${appointment.price} DT`;
         
         modal.classList.add('show');
     }
@@ -335,6 +335,14 @@ class AppointmentBooking {
         document.getElementById('selectedTime').textContent = 'Aucun';
         this.updateSummary();
         this.updateFormDisplay();
+    }
+
+    deleteAppointment(appointmentId) {
+        if (confirm('Êtes-vous sûr de vouloir supprimer ce rendez-vous?')) {
+            this.appointments = this.appointments.filter(apt => apt.id !== appointmentId);
+            localStorage.setItem('appointments', JSON.stringify(this.appointments));
+            this.displayAppointments();
+        }
     }
 
     displayAppointments() {
@@ -364,18 +372,22 @@ class AppointmentBooking {
                     <div class="appointment-detail">📅 <strong>${appointment.date}</strong></div>
                     <div class="appointment-detail">⏰ <strong>${appointment.time}</strong></div>
                     <div class="appointment-detail">💅 <strong>${appointment.service}</strong></div>
-                    <div class="appointment-detail">💰 <strong>${appointment.price}€</strong></div>
+                    <div class="appointment-detail">💰 <strong>${appointment.price} DT</strong></div>
                     <div class="appointment-detail">📧 <strong>${appointment.email}</strong></div>
                     <div class="appointment-detail">📱 <strong>${appointment.phone}</strong></div>
                 </div>
                 ${appointment.notes ? `<div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(0,0,0,0.1);"><small><strong>Notes:</strong> ${appointment.notes}</small></div>` : ''}
+                <button class="delete-btn" onclick="bookingApp.deleteAppointment(${appointment.id})">🗑️ Supprimer</button>
             `;
             appointmentsList.appendChild(card);
         });
     }
 }
 
+// Instance globale pour accès externe
+let bookingApp;
+
 // Initialiser l'application
 document.addEventListener('DOMContentLoaded', () => {
-    new AppointmentBooking();
+    bookingApp = new AppointmentBooking();
 });
