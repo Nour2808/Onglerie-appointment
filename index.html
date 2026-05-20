@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onglerie - Réservation de Rendez-vous</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>💅 Onglerie</h1>
+                <p class="tagline">Votre salon de beauté pour les ongles</p>
+            </div>
+        </header>
+
+        <main>
+            <div class="booking-container">
+                <div class="booking-section">
+                    <h2>Réserver votre Rendez-vous</h2>
+                    <form id="bookingForm">
+                        <!-- Étape 1: Sélection de la date -->
+                        <div class="form-step" id="step-date">
+                            <h3>Étape 1: Choisissez une date</h3>
+                            <div class="calendar-container">
+                                <div class="calendar-header">
+                                    <button type="button" id="prevMonth" class="btn-nav">← Précédent</button>
+                                    <h3 id="currentMonth"></h3>
+                                    <button type="button" id="nextMonth" class="btn-nav">Suivant →</button>
+                                </div>
+                                <div id="calendar" class="calendar"></div>
+                            </div>
+                            <p class="selected-date">Date sélectionnée: <strong id="selectedDate">Aucune</strong></p>
+                        </div>
+
+                        <!-- Étape 2: Sélection du service -->
+                        <div class="form-step" id="step-service">
+                            <h3>Étape 2: Choisissez votre service</h3>
+                            <div class="services-grid">
+                                <div class="service-option">
+                                    <input type="radio" id="service1" name="service" value="Manucure Classique" data-price="35">
+                                    <label for="service1">
+                                        <div class="service-name">Manucure Classique</div>
+                                        <div class="service-price">35€</div>
+                                        <div class="service-duration">45 min</div>
+                                    </label>
+                                </div>
+
+                                <div class="service-option">
+                                    <input type="radio" id="service2" name="service" value="Pédicure" data-price="40">
+                                    <label for="service2">
+                                        <div class="service-name">Pédicure</div>
+                                        <div class="service-price">40€</div>
+                                        <div class="service-duration">60 min</div>
+                                    </label>
+                                </div>
+
+                                <div class="service-option">
+                                    <input type="radio" id="service3" name="service" value="Pose de Gel" data-price="50">
+                                    <label for="service3">
+                                        <div class="service-name">Pose de Gel</div>
+                                        <div class="service-price">50€</div>
+                                        <div class="service-duration">60 min</div>
+                                    </label>
+                                </div>
+
+                                <div class="service-option">
+                                    <input type="radio" id="service4" name="service" value="Décoration & Art" data-price="25">
+                                    <label for="service4">
+                                        <div class="service-name">Décoration & Art</div>
+                                        <div class="service-price">25€</div>
+                                        <div class="service-duration">30 min</div>
+                                    </label>
+                                </div>
+
+                                <div class="service-option">
+                                    <input type="radio" id="service5" name="service" value="Pose Ongles Acryliques" data-price="60">
+                                    <label for="service5">
+                                        <div class="service-name">Pose Ongles Acryliques</div>
+                                        <div class="service-price">60€</div>
+                                        <div class="service-duration">90 min</div>
+                                    </label>
+                                </div>
+
+                                <div class="service-option">
+                                    <input type="radio" id="service6" name="service" value="Forfait Complet" data-price="80">
+                                    <label for="service6">
+                                        <div class="service-name">Forfait Complet</div>
+                                        <div class="service-price">80€</div>
+                                        <div class="service-duration">120 min</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <p class="selected-service">Service sélectionné: <strong id="selectedService">Aucun</strong></p>
+                        </div>
+
+                        <!-- Étape 3: Sélection de l'horaire -->
+                        <div class="form-step" id="step-time">
+                            <h3>Étape 3: Choisissez votre horaire</h3>
+                            <div class="time-slots">
+                                <div class="available-hours">
+                                    <p class="hours-label">Horaires disponibles</p>
+                                    <div id="timeSlots" class="time-grid"></div>
+                                </div>
+                            </div>
+                            <p class="selected-time">Horaire sélectionné: <strong id="selectedTime">Aucun</strong></p>
+                        </div>
+
+                        <!-- Étape 4: Informations client -->
+                        <div class="form-step" id="step-client">
+                            <h3>Étape 4: Vos informations</h3>
+                            <div class="form-group">
+                                <label for="fullName">Nom complet *</label>
+                                <input type="text" id="fullName" name="fullName" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Téléphone *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="notes">Notes spéciales (optionnel)</label>
+                                <textarea id="notes" name="notes" placeholder="Allergies, préférences de couleur, etc..."></textarea>
+                            </div>
+
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">J'accepte les conditions d'utilisation</label>
+                            </div>
+                        </div>
+
+                        <!-- Résumé de la réservation -->
+                        <div class="booking-summary">
+                            <h3>Résumé de votre réservation</h3>
+                            <div class="summary-item">
+                                <span>Date:</span>
+                                <strong id="summaryDate">-</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Service:</span>
+                                <strong id="summaryService">-</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Horaire:</span>
+                                <strong id="summaryTime">-</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Prix:</span>
+                                <strong id="summaryPrice">-</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Client:</span>
+                                <strong id="summaryClient">-</strong>
+                            </div>
+                        </div>
+
+                        <!-- Boutons de navigation -->
+                        <div class="form-buttons">
+                            <button type="button" id="cancelBtn" class="btn btn-secondary">Annuler</button>
+                            <button type="button" id="prevBtn" class="btn btn-secondary" style="display:none;">← Retour</button>
+                            <button type="button" id="nextBtn" class="btn btn-primary">Suivant →</button>
+                            <button type="submit" id="submitBtn" class="btn btn-success" style="display:none;">Confirmer le rendez-vous</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Affichage des rendez-vous confirmés -->
+                <div class="appointments-section">
+                    <h2>Rendez-vous Confirmés</h2>
+                    <div id="appointmentsList" class="appointments-list"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Modal de confirmation -->
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>✓ Rendez-vous Confirmé!</h2>
+                    <button type="button" class="close-btn" id="closeModal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Merci! Votre rendez-vous a été confirmé.</p>
+                    <div class="confirmation-details">
+                        <p><strong>Un email de confirmation a été envoyé à:</strong></p>
+                        <p id="confirmationEmail" class="email"></p>
+                    </div>
+                    <div class="confirmation-summary">
+                        <div class="summary-item">
+                            <span>📅 Date:</span>
+                            <span id="confirmDate"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span>⏰ Horaire:</span>
+                            <span id="confirmTime"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span>💅 Service:</span>
+                            <span id="confirmService"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span>💰 Prix:</span>
+                            <span id="confirmPrice"></span>
+                        </div>
+                    </div>
+                    <p class="confirmation-message">À bientôt dans notre salon! 😊</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="newBookingBtn">Nouvelle Réservation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
