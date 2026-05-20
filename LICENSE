@@ -1,21 +1,46 @@
-MIT License
+School Project License
 
-Copyright (c) 2024 Nour2808
+Copyright (c) 2026 Nour Kherfani
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This project was created by Nour Kherfani as part of the NSI (Numérique et Sciences Informatiques) 
+curriculum project at Lycée René Descartes.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+TERMS AND CONDITIONS:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+1. SCHOOL AUTHORITY USAGE
+   This software is exclusively authorized for use under the school authority of Lycée René Descartes.
+   The school and its authorized educational personnel have full rights to use, access, modify, 
+   and evaluate this project for educational purposes.
+
+2. RESTRICTIONS
+   - This software may NOT be used, distributed, modified, or sublicensed outside of the school authority
+   - Commercial use is strictly prohibited
+   - Redistribution to third parties is strictly prohibited without explicit written permission
+   - Copying or reusing this project code for external purposes is not permitted
+
+3. EDUCATIONAL PURPOSE
+   This project is exclusively intended for:
+   - Educational evaluation by Lycée René Descartes
+   - Learning and teaching purposes within the school
+   - Assessment of student competencies in computer science
+
+4. NO WARRANTY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+   INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+   PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR 
+   ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR 
+   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR 
+   OTHER DEALINGS IN THE SOFTWARE.
+
+5. INTELLECTUAL PROPERTY
+   All rights to this project remain with the author, Nour Kherfani, and Lycée René Descartes.
+   Any use outside the school context requires explicit written permission from the author.
+
+For questions or permissions, contact: Nour Kherfani or Lycée René Descartes
+
+---
+Licence du Projet Scolaire / School Project License
+Project created: 2026
+School: Lycée René Descartes
+Author: Nour Kherfani
+Subject: NSI (Numérique et Sciences Informatiques)
