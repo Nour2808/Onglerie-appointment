@@ -54,6 +54,12 @@ header {
     opacity: 0.95;
 }
 
+.location {
+    font-size: 1em;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
 /* Main */
 main {
     display: grid;
@@ -516,6 +522,7 @@ main {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     font-size: 0.9em;
+    margin-bottom: 12px;
 }
 
 .appointment-detail {
@@ -526,6 +533,37 @@ main {
 
 .appointment-detail strong {
     color: var(--primary-color);
+}
+
+/* Delete Button */
+.delete-btn {
+    width: 100%;
+    padding: 10px 15px;
+    background: var(--danger-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.delete-btn:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+}
+
+.delete-btn:active {
+    transform: translateY(0);
 }
 
 .no-appointments {
@@ -783,6 +821,11 @@ main {
     .btn {
         padding: 10px 15px;
         font-size: 0.9em;
+    }
+
+    .delete-btn {
+        padding: 8px 10px;
+        font-size: 0.85em;
     }
 
     .modal-content {
